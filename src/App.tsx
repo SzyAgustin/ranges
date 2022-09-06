@@ -1,14 +1,11 @@
 import Cell from './components/Cell';
 import {
-  Button,
   ButtonsBox,
   Flex,
   MatrixBox,
   MatrixFlex,
   Row,
-  Section,
   StyledApp,
-  Title,
 } from './components/Styled';
 import { matrix } from './tables/matrix';
 import OponentSection from './components/OpponentSection';
@@ -24,9 +21,9 @@ type colorsOptions = {
 
 const colors: colorsOptions = {
   1: '#2ad508',
-  2: '#a8e250',
+  2: '#99ed1b',
   3: '#e25050',
-  4: '#f1e909',
+  4: '#ffe100',
   5: '#0070C0',
   14: '#FC9F6C',
   15: '#BFBFBF',
