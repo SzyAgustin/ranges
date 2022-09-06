@@ -196,6 +196,8 @@ export const matrix: string[][] = [
     ],
 ];
 
+export const DEFAULT = "5-5-5-5-5-5-5-5-5-5-5-5-5.5-5-5-5-5-5-5-5-5-5-5-5-5.5-5-5-5-5-5-5-5-5-5-5-5-5.5-5-5-5-5-5-5-5-5-5-5-5-5.5-5-5-5-5-5-5-5-5-5-5-5-5.5-5-5-5-5-5-5-5-5-5-5-5-5.5-5-5-5-5-5-5-5-5-5-5-5-5.5-5-5-5-5-5-5-5-5-5-5-5-5.5-5-5-5-5-5-5-5-5-5-5-5-5.5-5-5-5-5-5-5-5-5-5-5-5-5.5-5-5-5-5-5-5-5-5-5-5-5-5.5-5-5-5-5-5-5-5-5-5-5-5-5.5-5-5-5-5-5-5-5-5-5-5-5-5";
+
 export const UTG_OR = "5-5-5-5-5-5-5-5-5-5-5-5-5.5-5-5-5-5-5-5-5-0-0-0-0-0.5-5-5-5-5-5-0-0-0-0-0-0-0.5-5-5-5-5-5-0-0-0-0-0-0-0.5-0-0-0-5-5-0-0-0-0-0-0-0.0-0-0-0-0-5-0-0-0-0-0-0-0.0-0-0-0-0-0-5-0-0-0-0-0-0.0-0-0-0-0-0-0-5-0-0-0-0-0.0-0-0-0-0-0-0-0-5-0-0-0-0.0-0-0-0-0-0-0-0-0-0-0-0-0.0-0-0-0-0-0-0-0-0-0-0-0-0.0-0-0-0-0-0-0-0-0-0-0-0-0.0-0-0-0-0-0-0-0-0-0-0-0-0"
 export const MP_OR = "5-5-5-5-5-5-5-5-5-5-5-5-5.5-5-5-5-5-5-5-5-5-5-0-0-0.5-5-5-5-5-5-5-0-0-0-0-0-0.5-5-5-5-5-5-0-0-0-0-0-0-0.5-5-5-0-5-5-0-0-0-0-0-0-0.15-0-0-0-0-5-0-0-0-0-0-0-0.0-0-0-0-0-0-5-0-0-0-0-0-0.0-0-0-0-0-0-0-5-0-0-0-0-0.0-0-0-0-0-0-0-0-5-0-0-0-0.0-0-0-0-0-0-0-0-0-15-0-0-0.0-0-0-0-0-0-0-0-0-0-0-0-0.0-0-0-0-0-0-0-0-0-0-0-0-0.0-0-0-0-0-0-0-0-0-0-0-0-0";
 export const CO_OR = "5-5-5-5-5-5-5-5-5-5-5-5-5.5-5-5-5-5-5-5-5-5-5-5-5-0.5-5-5-5-5-5-5-5-5-5-0-0-0.5-5-5-5-5-5-5-5-0-0-0-0-0.5-5-5-5-5-5-5-0-0-0-0-0-0.5-15-0-0-0-5-5-0-0-0-0-0-0.5-0-0-0-0-0-5-5-0-0-0-0-0.0-0-0-0-0-0-0-5-15-0-0-0-0.0-0-0-0-0-0-0-0-5-15-0-0-0.5-0-0-0-0-0-0-0-0-5-5-0-0.0-0-0-0-0-0-0-0-0-0-5-0-0.0-0-0-0-0-0-0-0-0-0-0-5-0.0-0-0-0-0-0-0-0-0-0-0-0-5";
@@ -261,7 +263,75 @@ export const BBvsBTNySB = "1-1-1-2-2-4-4-4-4-1-4-4-4.1-1-2-3-2-4-4-3-4-4-4-4-4.3
 
 
 export const getMatrix = (myPosition: string, opponentPosition: string, plusCaller: string) => {
-    if (myPosition === "" && opponentPosition === "" && plusCaller === "") {
-        return "";
+    switch (myPosition) {
+        case "UTG":
+            if (opponentPosition === "") return UTG_OR;
+            if (opponentPosition === "MP") return UTGvsMP;
+            if (opponentPosition === "CO") return UTGvsCO;
+            if (opponentPosition === "BTN") return UTGvsBTN;
+            if (opponentPosition === "SB") return UTGvsSB;
+            if (opponentPosition === "BB") return UTGvsBB;
+            break;
+        case "MP":
+            if (opponentPosition === "") return MP_OR;
+            if (opponentPosition === "UTG") return MPvsUTG;
+            if (opponentPosition === "CO") return MPvsCO;
+            if (opponentPosition === "BTN") return MPvsBTN;
+            if (opponentPosition === "SB") return MPvsSB;
+            if (opponentPosition === "BB") return MPvsBB;
+            break;
+        case "CO":
+            if (opponentPosition === "") return CO_OR;
+            if (opponentPosition === "UTG" && plusCaller === "MP") return COvsUTGyMP;
+            if (opponentPosition === "UTG" && plusCaller === "") return COvsUTG;
+            if (opponentPosition === "MP") return COvsMP;
+            if (opponentPosition === "BTN") return COvsBTN;
+            if (opponentPosition === "SB") return COvsSB;
+            if (opponentPosition === "BB") return COvsBB;
+            break;
+        case "BTN":
+            if (opponentPosition === "") return BTN_OR;
+            if (opponentPosition === "UTG" && plusCaller === "") return COvsMP;
+            if (opponentPosition === "UTG" && plusCaller === "MP") return BTNvsUTGyMP;
+            if (opponentPosition === "UTG" && plusCaller === "CO") return BTNvsMPyCO;
+            if (opponentPosition === "MP" && plusCaller === "") return COvsMP;
+            if (opponentPosition === "MP" && plusCaller === "CO") return BTNvsMPyCO;
+            if (opponentPosition === "CO") return COvsBTN;
+            if (opponentPosition === "SB") return COvsSB;
+            if (opponentPosition === "BB") return COvsBB;
+            break;
+        case "SB":
+            if (opponentPosition === "") return SB_OR;
+            if (opponentPosition === "UTG" && plusCaller === "") return SBvsUTG;
+            if (opponentPosition === "UTG" && plusCaller === "MP") return SBvsUTGyMP;
+            if (opponentPosition === "UTG" && plusCaller === "CO") return SBvsUTGyCO;
+            if (opponentPosition === "UTG" && plusCaller === "BTN") return SBvsUTGyBTN;
+            if (opponentPosition === "MP" && plusCaller === "") return SBvsMP;
+            if (opponentPosition === "MP" && plusCaller === "CO") return SBvsCO;
+            if (opponentPosition === "MP" && plusCaller === "BTN") return SBvsBTN;
+            if (opponentPosition === "CO" && plusCaller === "") return SBvsCO;
+            if (opponentPosition === "CO" && plusCaller === "BTN") return SBvsCOyBTN;
+            if (opponentPosition === "BTN") return SBvsBTN;
+            if (opponentPosition === "BB") return SBvsBB;
+            break;
+        case "BB":
+            if (opponentPosition === "UTG" && plusCaller === "") return BBvsUTG;
+            if (opponentPosition === "UTG" && plusCaller === "MP") return BBvsUTGyMP;
+            if (opponentPosition === "UTG" && plusCaller === "CO") return BBvsUTGyCO;
+            if (opponentPosition === "UTG" && plusCaller === "BTN") return BBvsUTGyBTN;
+            if (opponentPosition === "UTG" && plusCaller === "SB") return BBvsUTGySB;
+            if (opponentPosition === "MP" && plusCaller === "") return BBvsMP;
+            if (opponentPosition === "MP" && plusCaller === "CO") return BBvsMPyCO;
+            if (opponentPosition === "MP" && plusCaller === "BTN") return BBvsMPyBTN;
+            if (opponentPosition === "MP" && plusCaller === "SB") return BBvsMPySB;
+            if (opponentPosition === "CO" && plusCaller === "") return BBvsCO;
+            if (opponentPosition === "CO" && plusCaller === "BTN") return BBvsCOyBTN;
+            if (opponentPosition === "CO" && plusCaller === "SB") return BBvsCOySB;
+            if (opponentPosition === "BTN" && plusCaller === "") return BBvsBTN;
+            if (opponentPosition === "BTN" && plusCaller === "SB") return BBvsBTNySB;
+            if (opponentPosition === "SB") return BBvsSB;
+            break;
+        default:
+            return DEFAULT;
     }
 }

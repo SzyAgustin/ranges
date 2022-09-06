@@ -7,7 +7,7 @@ import {
   Row,
   StyledApp,
 } from './components/Styled';
-import { matrix } from './tables/matrix';
+import { getMatrix, matrix } from './tables/matrix';
 import OponentSection from './components/OpponentSection';
 import { useState } from 'react';
 import MyPositionSection from './components/MyPositionSection';
@@ -30,15 +30,19 @@ const colors: colorsOptions = {
   16: '#111111',
 };
 
-const cellsColors =
-  '1-1-2-4-4-4-4-4-4-3-4-4-4.1-1-4-4-4-4-4-3-3-3-4-0-0.4-4-2-4-4-3-3-0-0-0-0-0-0.4-4-4-4-4-4-4-0-0-0-0-0-0.4-0-0-0-4-4-4-4-0-0-0-0-0.0-0-0-0-0-4-4-4-0-0-0-0-0.0-0-0-0-0-0-4-4-4-0-0-0-0.0-0-0-0-0-0-0-4-4-4-0-0-0.0-0-0-0-0-0-0-0-4-4-4-0-0.0-0-0-0-0-0-0-0-0-4-4-4-0.0-0-0-0-0-0-0-0-0-0-4-4-0.0-0-0-0-0-0-0-0-0-0-0-4-0.0-0-0-0-0-0-0-0-0-0-0-0-4';
-const cellsArrays = cellsColors.split('.').map((row) => row.split('-'));
-
 function App() {
   const [myPosition, setMyPosition] = useState<string>('BB');
   const [opponentPosition, setOpponentPosition] = useState<string>('SB');
   const [plusCallerPosition, setPlusCallerPosition] = useState<string>('');
   const [squeeze, setSqueeze] = useState<string>('');
+
+  const matrixColors = getMatrix(
+    myPosition,
+    opponentPosition,
+    plusCallerPosition
+  );
+  const cellsArrays =
+    matrixColors && matrixColors.split('.').map((row) => row.split('-'));
 
   return (
     <StyledApp>
@@ -54,6 +58,7 @@ function App() {
           <OponentSection
             opponentPosition={opponentPosition}
             setOpponentPosition={setOpponentPosition}
+            setPlusCaller={setPlusCallerPosition}
             myPosition={myPosition}
             setSqueeze={setSqueeze}
           />
@@ -75,13 +80,18 @@ function App() {
         </Flex>
       </ButtonsBox>
       <MatrixBox>
-        {matrix.map((row, i) => (
-          <Row>
-            {row.map((cards, j) => (
-              <Cell cards={cards} color={colors[cellsArrays[i][j]]} />
-            ))}
-          </Row>
-        ))}
+        {cellsArrays &&
+          matrix.map((row, i) => (
+            <Row key={i}>
+              {row.map((cards, j) => (
+                <Cell
+                  key={cards}
+                  cards={cards}
+                  color={colors[cellsArrays[i][j]]}
+                />
+              ))}
+            </Row>
+          ))}
         <MatrixFlex>
           <ColorDescription color={colors[1]} text='3Bet/All In' />
           <ColorDescription color={colors[2]} text='3Bet/Call 4Bet' />

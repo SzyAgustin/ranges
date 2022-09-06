@@ -14,6 +14,7 @@ const StyledCell = styled.div<StyledCellProps>`
   margin-left: 1.3px;
   font-size: 13px;
   background-color: ${(p) => (p.color ? p.color : '#111111')};
+  color: #111111;
 `;
 
 interface CellProps {
@@ -24,7 +25,9 @@ interface CellProps {
 const Cell = ({ cards, color }: CellProps) => {
   return (
     <StyledCell color={color}>
-      <span>{cards}</span>
+      <span>
+        <strong>{cards}</strong>
+      </span>
     </StyledCell>
   );
 };

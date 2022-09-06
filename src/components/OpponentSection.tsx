@@ -4,6 +4,7 @@ interface OpponentSectionProps {
   opponentPosition: string;
   setOpponentPosition: (x: string) => void;
   setSqueeze: (x: string) => void;
+  setPlusCaller: (x: string) => void;
   myPosition: string;
 }
 
@@ -11,11 +12,13 @@ const OpponentSection = ({
   opponentPosition,
   setOpponentPosition,
   setSqueeze,
+  setPlusCaller,
   myPosition,
 }: OpponentSectionProps) => {
   const selectOpponent = (opponentSelected: string) => {
     setOpponentPosition(opponentSelected);
     setSqueeze('');
+    setPlusCaller('');
   };
 
   return (

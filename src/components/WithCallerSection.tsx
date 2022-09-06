@@ -47,29 +47,29 @@ const WithCallerSection = ({
       <Title>+ CALLER</Title>
       <Button
         disabled={SBDisabled}
-        selected={plusCallerPosition === '+ SB'}
-        onClick={() => setPlusCallerPosition('+ SB')}
+        selected={plusCallerPosition === 'SB'}
+        onClick={() => setPlusCallerPosition('SB')}
       >
         + SB
       </Button>
       <Button
         disabled={BTNDisabled}
-        selected={plusCallerPosition === '+ BTN'}
-        onClick={() => setPlusCallerPosition('+ BTN')}
+        selected={plusCallerPosition === 'BTN'}
+        onClick={() => setPlusCallerPosition('BTN')}
       >
         + BTN
       </Button>
       <Button
         disabled={CODisabled}
-        selected={plusCallerPosition === '+ CO'}
-        onClick={() => setPlusCallerPosition('+ CO')}
+        selected={plusCallerPosition === 'CO'}
+        onClick={() => setPlusCallerPosition('CO')}
       >
         + CO
       </Button>
       <Button
         disabled={MPDisabled}
-        selected={plusCallerPosition === '+ MP'}
-        onClick={() => setPlusCallerPosition('+ MP')}
+        selected={plusCallerPosition === 'MP'}
+        onClick={() => setPlusCallerPosition('MP')}
       >
         + MP
       </Button>
