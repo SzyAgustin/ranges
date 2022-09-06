@@ -2,13 +2,31 @@ import { Button, Section, Title } from './Styled';
 
 interface VsSqueezeSectionProps {
   myPosition: string;
+  squeeze: string;
+  setSqueeze: (x: string) => void;
+  setOpponent: (x: string) => void;
+  setPlusCaller: (x: string) => void;
 }
 
-const VsSqueezeSection = ({ myPosition }: VsSqueezeSectionProps) => {
+const VsSqueezeSection = ({
+  myPosition,
+  squeeze,
+  setSqueeze,
+  setOpponent,
+  setPlusCaller,
+}: VsSqueezeSectionProps) => {
+  const selectSqueeze = (squeezePosition: string) => {
+    setSqueeze(squeezePosition);
+    setOpponent('');
+    setPlusCaller('');
+  };
+
   return (
     <Section>
       <Title>VS SQUEEZE</Title>
       <Button
+        onClick={() => selectSqueeze('IP')}
+        selected={squeeze === 'IP'}
         disabled={
           !(
             myPosition === 'UTG' ||
@@ -20,7 +38,11 @@ const VsSqueezeSection = ({ myPosition }: VsSqueezeSectionProps) => {
       >
         IP
       </Button>
-      <Button disabled={!(myPosition === 'UTG' || myPosition === 'MP')}>
+      <Button
+        onClick={() => selectSqueeze('OOP')}
+        disabled={!(myPosition === 'UTG' || myPosition === 'MP')}
+        selected={squeeze === 'OOP'}
+      >
         OOP
       </Button>
     </Section>

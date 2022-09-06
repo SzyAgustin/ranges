@@ -39,8 +39,9 @@ const cellsArrays = cellsColors.split('.').map((row) => row.split('-'));
 
 function App() {
   const [myPosition, setMyPosition] = useState<string>('BB');
-  const [opponentPosition, setOpponentPosition] = useState<string>('');
-  const [plusCallerPosition, setPluCallerPosition] = useState<string>('');
+  const [opponentPosition, setOpponentPosition] = useState<string>('SB');
+  const [plusCallerPosition, setPlusCallerPosition] = useState<string>('');
+  const [squeeze, setSqueeze] = useState<string>('');
 
   return (
     <StyledApp>
@@ -48,22 +49,31 @@ function App() {
         <Flex>
           <MyPositionSection
             selectedPosition={myPosition}
-            setYourPosition={setMyPosition}
+            setMyPosition={setMyPosition}
             setOpponentPosition={setOpponentPosition}
+            setSqueeze={setSqueeze}
+            setPlusCaller={setPlusCallerPosition}
           />
           <OponentSection
             opponentPosition={opponentPosition}
             setOpponentPosition={setOpponentPosition}
             myPosition={myPosition}
+            setSqueeze={setSqueeze}
           />
         </Flex>
         <Flex>
-          <VsSqueezeSection myPosition={myPosition} />
+          <VsSqueezeSection
+            squeeze={squeeze}
+            setSqueeze={setSqueeze}
+            myPosition={myPosition}
+            setPlusCaller={setPlusCallerPosition}
+            setOpponent={setOpponentPosition}
+          />
           <WithCallerSection
             myPosition={myPosition}
             opponentPosition={opponentPosition}
             plusCallerPosition={plusCallerPosition}
-            setPlusCallerPosition={setPluCallerPosition}
+            setPlusCallerPosition={setPlusCallerPosition}
           />
         </Flex>
       </ButtonsBox>

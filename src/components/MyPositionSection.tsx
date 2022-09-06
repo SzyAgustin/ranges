@@ -2,69 +2,62 @@ import { Button, Section, Title } from './Styled';
 
 interface MyPositionSectionProps {
   selectedPosition: string;
-  setYourPosition: (x: string) => void;
+  setMyPosition: (x: string) => void;
   setOpponentPosition: (x: string) => void;
+  setSqueeze: (x: string) => void;
+  setPlusCaller: (x: string) => void;
 }
 
 const MyPositionSection = ({
   selectedPosition,
-  setYourPosition,
+  setMyPosition,
   setOpponentPosition,
+  setSqueeze,
+  setPlusCaller,
 }: MyPositionSectionProps) => {
+  const selectMyPosition = (myPosition: string) => {
+    setMyPosition(myPosition);
+    setOpponentPosition(myPosition === 'BB' ? 'SB' : '');
+    setSqueeze('');
+    setPlusCaller('');
+  };
+
   return (
     <Section>
       <Title>YOUR POSITION</Title>
       <Button
         selected={selectedPosition === 'BB'}
-        onClick={() => {
-          setYourPosition('BB');
-          setOpponentPosition('SB');
-        }}
+        onClick={() => selectMyPosition('BB')}
       >
         BB
       </Button>
       <Button
         selected={selectedPosition === 'SB'}
-        onClick={() => {
-          setYourPosition('SB');
-          setOpponentPosition('');
-        }}
+        onClick={() => selectMyPosition('SB')}
       >
         SB
       </Button>
       <Button
         selected={selectedPosition === 'BTN'}
-        onClick={() => {
-          setYourPosition('BTN');
-          setOpponentPosition('');
-        }}
+        onClick={() => selectMyPosition('BTN')}
       >
         BTN
       </Button>
       <Button
         selected={selectedPosition === 'CO'}
-        onClick={() => {
-          setYourPosition('CO');
-          setOpponentPosition('');
-        }}
+        onClick={() => selectMyPosition('CO')}
       >
         CO
       </Button>
       <Button
         selected={selectedPosition === 'MP'}
-        onClick={() => {
-          setYourPosition('MP');
-          setOpponentPosition('');
-        }}
+        onClick={() => selectMyPosition('MP')}
       >
         MP
       </Button>
       <Button
         selected={selectedPosition === 'UTG'}
-        onClick={() => {
-          setYourPosition('UTG');
-          setOpponentPosition('');
-        }}
+        onClick={() => selectMyPosition('UTG')}
       >
         UTG
       </Button>
