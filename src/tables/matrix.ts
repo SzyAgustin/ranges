@@ -291,14 +291,14 @@ export const getMatrix = (myPosition: string, opponentPosition: string, plusCall
             break;
         case "BTN":
             if (opponentPosition === "") return BTN_OR;
-            if (opponentPosition === "UTG" && plusCaller === "") return COvsMP;
+            if (opponentPosition === "UTG" && plusCaller === "") return BTNvsUTG;
             if (opponentPosition === "UTG" && plusCaller === "MP") return BTNvsUTGyMP;
             if (opponentPosition === "UTG" && plusCaller === "CO") return BTNvsMPyCO;
-            if (opponentPosition === "MP" && plusCaller === "") return COvsMP;
+            if (opponentPosition === "MP" && plusCaller === "") return BTNvsMP;
             if (opponentPosition === "MP" && plusCaller === "CO") return BTNvsMPyCO;
-            if (opponentPosition === "CO") return COvsBTN;
-            if (opponentPosition === "SB") return COvsSB;
-            if (opponentPosition === "BB") return COvsBB;
+            if (opponentPosition === "CO") return BTNvsCO;
+            if (opponentPosition === "SB") return BTNvsSB;
+            if (opponentPosition === "BB") return BTNvsBB;
             break;
         case "SB":
             if (opponentPosition === "") return SB_OR;
