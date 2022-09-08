@@ -23,11 +23,10 @@ const colors: colorsOptions = {
   1: '#2ad508',
   2: '#99ed1b',
   3: '#e25050',
-  4: '#ffe100',
+  4: '#efe700',
   5: '#0070C0',
-  14: '#FC9F6C',
+  14: '#f98c26',
   15: '#BFBFBF',
-  16: '#111111',
 };
 
 function App() {
@@ -39,7 +38,8 @@ function App() {
   const matrixColors = getMatrix(
     myPosition,
     opponentPosition,
-    plusCallerPosition
+    plusCallerPosition,
+    squeeze
   );
   const cellsArrays =
     matrixColors && matrixColors.split('.').map((row) => row.split('-'));
