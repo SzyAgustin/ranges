@@ -1,21 +1,22 @@
-import Cell from './components/Cell';
 import {
   ButtonsBox,
+  CommentsBox,
+  CommentsLine,
   Flex,
   MatrixBox,
   MatrixFlex,
-  Row,
   StyledApp,
 } from './components/Styled';
-import { getMatrix, matrix } from './tables/matrix';
+import { getMatrix, matrix, getComments } from './tables/matrix';
 import OponentSection from './components/OpponentSection';
 import { useState } from 'react';
 import MyPositionSection from './components/MyPositionSection';
 import VsSqueezeSection from './components/VsSqueezeSection';
 import WithCallerSection from './components/WithCallerSection';
 import ColorDescription from './components/ColorDescription';
+import Matrix from './components/Matrix';
 
-type colorsOptions = {
+export type colorsOptions = {
   [key: string]: string;
 };
 
@@ -43,6 +44,12 @@ function App() {
   );
   const cellsArrays =
     matrixColors && matrixColors.split('.').map((row) => row.split('-'));
+  const comments = getComments(
+    myPosition,
+    opponentPosition,
+    plusCallerPosition,
+    squeeze
+  );
 
   return (
     <StyledApp>
@@ -80,18 +87,7 @@ function App() {
         </Flex>
       </ButtonsBox>
       <MatrixBox>
-        {cellsArrays &&
-          matrix.map((row, i) => (
-            <Row key={i}>
-              {row.map((cards, j) => (
-                <Cell
-                  key={cards}
-                  cards={cards}
-                  color={colors[cellsArrays[i][j]]}
-                />
-              ))}
-            </Row>
-          ))}
+        <Matrix cellsArrays={cellsArrays} matrix={matrix} colors={colors} />
         <MatrixFlex>
           <ColorDescription color={colors[1]} text='3Bet/All In' />
           <ColorDescription color={colors[2]} text='3Bet/Call 4Bet' />
@@ -103,6 +99,11 @@ function App() {
           <ColorDescription color={colors[14]} text='Loose' />
           <ColorDescription color={colors[15]} text='Loose' />
         </MatrixFlex>
+        <CommentsBox>
+          {comments.split(' ------ ').map((line) => (
+            <div>{line}</div>
+          ))}
+        </CommentsBox>
       </MatrixBox>
     </StyledApp>
   );

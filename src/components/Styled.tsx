@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledApp = styled.div`
-  margin: 50px auto;
+  margin: 25px auto;
   display: flex;
 `;
 
@@ -17,8 +17,23 @@ export const ButtonsBox = styled.div`
 
 export const MatrixFlex = styled.div`
   display: flex;
-  margin-top: 30px;
+  margin-top: 10px;
   color: black;
+`;
+
+export const CommentsBox = styled.div`
+  background-color: #111111;
+  color: #ffffff;
+  min-height: 100px;
+  margin-top: 10px;
+  margin-right: 60px;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 5px;
+`;
+
+export const CommentsLine = styled.div`
+  margin-bottom: 2px;
 `;
 
 export const Flex = styled.div`

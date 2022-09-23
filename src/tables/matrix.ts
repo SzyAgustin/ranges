@@ -272,6 +272,85 @@ export const COvsSQOOP = "1-1-4-3-3-0-0-0-0-0-0-0-0.1-1-4-3-3-0-0-0-0-0-0-0-0.3-
 
 export const BTNvsSQIP = "1-1-4-4-4-0-0-0-0-3-3-3-3.14-1-4-14-4-0-0-0-0-0-0-0-0.14-3-1-4-0-0-0-0-0-0-0-0-0.0-0-0-14-0-0-0-0-0-0-0-0-0.0-0-0-0-14-0-0-0-0-0-0-0-0.0-0-0-0-0-4-0-0-0-0-0-0-0.0-0-0-0-0-0-4-0-0-0-0-0-0.0-0-0-0-0-0-0-0-0-0-0-0-0.0-0-0-0-0-0-0-0-0-0-0-0-0.0-0-0-0-0-0-0-0-0-0-0-0-0.0-0-0-0-0-0-0-0-0-0-0-0-0.0-0-0-0-0-0-0-0-0-0-0-0-0.0-0-0-0-0-0-0-0-0-0-0-0-0";
 
+
+export const DEFAULT_COMM = "";
+
+export const UTG_OR_COMM = "O.R 17.6%";
+export const MP_OR_COMM = "OR: 22.2%";
+export const CO_OR_COMM = "O.R 28.2%";
+export const BTN_OR_COMM = "O.R 50.8% ------ . ------ *Rango explotativo. Manos en Naranjo se pueden foldear cuando hay un reg muy bueno en bb.";
+export const SB_OR_COMM = "O.R 50.8% ------ . ------ *Rango explotativo. Manos en Naranjo se pueden foldear cuando hay un reg muy bueno en bb.";
+
+
+export const UTGvsMP_COMM = "Fold: 60% ------ Call:  11% ------ 4bet: 29%";
+export const UTGvsCO_COMM = "Fold: 60% ------ Call:  11% ------ 4bet: 29%";
+export const UTGvsBTN_COMM = "Fold: 60% ------ Call:  11% ------ 4bet: 29%";
+export const UTGvsSB_COMM = "Fold:  65% ------ Call:   12% ------ 4bet:  23%";
+export const UTGvsBB_COMM = "Fold:  65% ------ Call:   12% ------ 4bet:  23%";
+
+export const MPvsCO_COMM = "Fold:  62%  ------ Call:   11%  ------ 4bet:  27% ------ . ------ *JJ puede ser call al ll in, TT puede ser 4bet/fold";
+export const MPvsBTN_COMM = "Fold:  62%  ------ Call:   11%  ------ 4bet:  27% ------ . ------ *JJ puede ser call al ll in, TT puede ser 4bet/fold";
+export const MPvsUTG_COMM = "3bet: 8% ------ . ------ 3bet/Fold: 55% ------ 3bet/Call: 25% ------ 3bet/All in: 20% ------ . ------ *Tabla vs 20bbs 4bet. ------ *KQs, KJs, TT son zonas para pagar contra jugadores con 4bet muy alto.";
+export const MPvsSB_COMM = "Fold:  65% ------ Call:   14% ------ 4bet:  21%";
+export const MPvsBB_COMM = "Fold:  65% ------ Call:   14% ------ 4bet:  21%";
+
+export const COvsBTN_COMM = "Fold: 52% ------ Call:  24% ------ 4bet: 24%";
+export const COvsSB_COMM = "Fold: 63% ------ Call : 18% ------ 4bet: 19%";
+export const COvsBB_COMM = "Fold: 63% ------ Call : 18% ------ 4bet: 19%";
+export const COvsUTG_COMM = "3bet: 8.7% ------ . ------ 3bet/Fold: 55% ------ 3bet/Call:  26% ------ 3bet/All in: 19% ------ . ------ *Tabla vs 20bbs 4bet. ------ *TT 99 KJs ATs A5s pueden ser call 4bet marginales versus jugadores con mucho 4bet.";
+export const COvsMP_COMM = "3bet: 10.6% ------ Fold to 4bet: 50% ------ Call 4bet: 30% ------ All in : 20% ------ . ------ *Gtow propone mas call, revisar.";
+export const COvsUTGyMP_COMM = "Squeeze: 8.7%";
+
+export const BTNvsUTG_COMM = "3bet: 9.7% ------ . ------ 3bet/Fold:   56% ------ 3bet/Call:    27% ------ 3bet/All in:  17%";
+export const BTNvsMP_COMM = "3bet: 11.5% ------ . ------ 3bet/Fold:   51% ------ 3bet/Call:    28% ------ 3bet/All in:  21% ------ . ------ *A5s se puede usar en all in o call contra alguien que 4betea mucho.  ------ *vs 4bets de poca frecuencia, foldear ATs KTs 99 y A5s";
+export const BTNvsCO_COMM = "3bet: 14.3% ------ . ------ 3bet/Fold:   51% ------ 3bet/Call:    29% ------ 3bet/All in:  20% ------ . ------ *vs 4bets de poca frecuencia foldear A5s, JTs, KTs, 88";
+export const BTNvsBB_COMM = "Fold to 3bet: 58% ------ 4bet: 16% ------   ------ . ------ *Zona gris foldear contra 3bets grandes de 12 bb+";
+export const BTNvsSB_COMM = "Fold to 3bet: 58% ------ 4bet: 16% ------   ------ . ------ *Zona gris foldear contra 3bets grandes de 12 bb+";
+export const BTNvsUTGyMP_COMM = "Squeeze: 8.9% ------ . ------ Fold to RQ: 52% ------ All in : 29% ------ Call : 19% ------ . ------ *vs jugador tight foldear JJ 99 88";
+export const BTNvsUTGyCO_COMM = "Squeeze: 8.9% ------ . ------ Fold to RQ: 52% ------ All in : 29% ------ Call : 19% ------ . ------ *vs jugador tight foldear JJ 99 88";
+export const BTNvsMPyCO_COMM = "Squeeze: 13.4% ------ . ------ Fold to RQ: 55% ------ Call: 22% ------ All in: 23% ------ . ------ *Tabla vs 30bb. ------ *vs jugadores tight foldear 99-66 AJ-ATs";
+
+export const SBvsUTG_COMM = "3bet: 8.7% ------ . ------ 3bet/Fold:   55% ------ 3bet/Call:    13% ------ 3bet/All in:  32% ------ . ------ *A5s All in contra 4bet de sizes grandes. ------ *Se puede extender el call a TT y JJ de ser necesario";
+export const SBvsMP_COMM = "3bet: 9.4% ------ . ------ 3bet/Fold:   48% ------ 3bet/Call:    21% ------ 3bet/All in:  31%";
+export const SBvsCO_COMM = "3bet: 11.9% ------ . ------ 3bet/Fold:   53% ------ 3bet/Call:    15% ------ 3bet/All in:  32% ------ . ------ *AJs en all in solamente contra 4bets de alta frecuencia. TT contra 4bet de sizes bajitos es mejor en call.";
+export const SBvsBTN_COMM = "3bet: 16% ------ . ------ 3bet/Fold:   53% ------ 3bet/Call:    11% ------ 3bet/All in:  36%";
+export const SBvsBB_COMM = "Fold to 3bet: 52% ------ 4bet: 20% ------ . ------  ------ *vs 10 bb 3bet fold zona gris y pasar a 4bet manos como A7s A6s A5s J9s Q9s";
+export const SBvsUTGyMP_COMM = "Squeeze: 6.2% ------ . ------  ------ *Se puede pagar ocasionalmente con JJ TT AQs ------ *si BB resube all in con QQ+ AK";
+export const SBvsUTGyCO_COMM = "Squeeze: 6.2% ------ . ------  ------ *Se puede pagar ocasionalmente con JJ TT AQs ------ *si BB resube all in con QQ+ AK";
+export const SBvsUTGyBTN_COMM = "Squeeze: 6.2% ------ . ------  ------ *Se puede pagar ocasionalmente con JJ TT 99 AQs ------ *si BB resube all in con QQ+ AK";
+export const SBvsMPyCO_COMM = "Squeeze: 7.4% ------ . ------ *AQs 99 88 fold contra jugadores tight ------ *JJ All in solamente contra jugadores agresivos regulares, si no pasarlo al call o fold.";
+export const SBvsMPyBTN_COMM = "Squeeze: 8.9% ------ . ------  ------ *Tabla vs 30bb. Si va all in directo pagar JJ+ AK";
+export const SBvsCOyBTN_COMM = "Squeeze: 10.4% ------ . ------  ------ *Si CO va ALL-IN, CALL con TT+ AK ------ *AQs puede ser call o all in. AJs all in solo contra jugadores regulares agresivos";
+
+export const BBvsUTG_COMM = "3bet: 4.67% ------ Call: 21%";
+export const BBvsMP_COMM = "3bet: 7.8% ------ . ------ 3bet/Fold:   46% ------ 3bet/Call:    17% ------ 3bet/All in:  37%";
+export const BBvsCO_COMM = "3bet: 10% ------ . ------ 3bet/Fold:   55% ------ 3bet/Call:    36% ------ 3bet/ All in : 9%";
+export const BBvsBTN_COMM = "3bet: 15.7% ------ Cold Call: 24% ------ Fold Pre: 60% ------ . ------ 3bet/Fold:   48% ------ 3bet/Call:    24% ------ 3bet/All in:  28%";
+export const BBvsSB_COMM = "3bet: 19.6% ------ Fold: 44% ------ . ------ 3bet/Fold:  57% ------ 3bet/Call:   23% ------ 3bet/All in: 20%";
+export const BBvsUTGyMP_COMM = "Squeeze: 6% ------ Overcall: 11% ------ Fold Pre: 83% ------ . ------ *A5s solo all in contra jugadores regulares agresivos. AQs se puede pagar ocasionalmente, si no pasarlo al Fold.";
+export const BBvsUTGyCO_COMM = "Squeeze: 6% ------ Overcall: 11% ------ Fold Pre: 83% ------ . ------ *A5s solo all in contra jugadores regulares agresivos. AQs se puede pagar ocasionalmente, si no pasarlo al Fold.";
+export const BBvsUTGyBTN_COMM = "Squeeze: 7% ------ Overcall: 12% ------ Fold Pre: 81% ------ . ------ *A5s y JJ solo all in contra jugadores regulares agresivos. AQs se puede pagar ocasionalmente, si no pasarlo al Fold.";
+export const BBvsUTGySB_COMM = "Squeeze: 8% ------ Overcall: 13% ------ . ------ *El rango de Call al squeeze es una zona muy compleja y va a depender del rival. Contra jugadores tight foldear AQS y KJs";
+export const BBvsMPyCO_COMM = "Squeeze: 6% ------ Overcall: 12.5% ------ . ------ *El rango de Call al squeeze es una zona muy compleja y va a depender del rival.";
+export const BBvsMPyBTN_COMM = "Squeeze: 6% ------ Overcall: 14% ------ . ------ *El rango de Call al squeeze es una zona muy compleja y va a depender del rival.";
+export const BBvsMPySB_COMM = "Squeeze: 9.34% ------ Overcall: 13%";
+export const BBvsCOyBTN_COMM = "Squeeze: 11% ------ Overcall: 11% ------ . ------ *AQs podria ir all in ocasionalmente. KJs y AJs foldear contra jugadores tight";
+export const BBvsCOySB_COMM = "Squeeze: 11% ------ Overcall: 13% ------ . ------  ------ *Contra jugadores sq/fold con AJs 99";
+export const BBvsBTNySB_COMM = "Squeeze: 13% ------ Overcall: 17.5% ------ . ------ *AQo puede pagar o push ocasionalmente";
+
+export const UTGvsSQIP_COMM = "Fold: 77% ------ Call : 7% ------ Resqueeze: 16% ------ . ------  ------ *Rango vs Squeeze de 14bb. Contra squeeze mas chicos se puede pagar mas TT 99 etc ------ *Zona Naranja puede ir all in directo";
+export const UTGvsSQOOP_COMM = "Fold to Sq: 81% ------ Reesqueeze: 19% ------ . ------  ------ *QQ KK AK son manos que podrian ir all in directo";
+
+export const MPvsSQIP_COMM = "Fold to Squeeze: 77% ------ Reesqueze: 19% ------ Call squeeze: 4% ------ . ------ *Zona Naranjo se puede ir all in directo";
+export const MPvsSQOOP_COMM = "Fold to Squeeze: 81% ------ Reesqueze: 19% ------ . ------ *Zona Naranja puede ir all in directo. ------ *JJ contra squeeze de poca frecuencia debe foldear el all in";
+
+export const COvsSQIP_COMM = "Fold to squeeze: 78% ------ Reesqueze: 19% ------ . ------  ------ *JJ y AKo pueden ir all directo junto a KQs ocasional.";
+export const COvsSQOOP_COMM = "Fold to squeeze: 78% ------ Reesqueze: 19% ------ . ------  ------ *JJ y AKo pueden ir all directo junto a KQs ocasional.";
+
+export const BTNvsSQIP_COMM = "Fold to Squeeze: 78% ------ Reesqueze All in : 8% ------ Reesqueze a 29 bb: 7% ------ . ------  ------ . ------ *Tabla vs 14bb Squeeze. Contra 11-12bb algunas manos de push bluff pueden pasar a call.";
+
+
+
 export const getMatrix = (myPosition: string, opponentPosition: string, plusCaller: string, squeezer: string) => {
     switch (myPosition) {
         case "UTG":
@@ -351,4 +430,86 @@ export const getMatrix = (myPosition: string, opponentPosition: string, plusCall
         default:
             return DEFAULT;
     }
+}
+
+export const getComments = (myPosition: string, opponentPosition: string, plusCaller: string, squeezer: string) => {
+    switch (myPosition) {
+        case "UTG":
+            if (squeezer === "IP") return UTGvsSQIP_COMM;
+            if (squeezer === "OOP") return UTGvsSQOOP_COMM;
+            if (opponentPosition === "") return UTG_OR_COMM;
+            if (opponentPosition === "MP") return UTGvsMP_COMM;
+            if (opponentPosition === "CO") return UTGvsCO_COMM;
+            if (opponentPosition === "BTN") return UTGvsBTN_COMM;
+            if (opponentPosition === "SB") return UTGvsSB_COMM;
+            if (opponentPosition === "BB") return UTGvsBB_COMM;
+            break;
+        case "MP":
+            if (squeezer === "IP") return MPvsSQIP_COMM;
+            if (squeezer === "OOP") return MPvsSQOOP_COMM;
+            if (opponentPosition === "") return MP_OR_COMM;
+            if (opponentPosition === "UTG") return MPvsUTG_COMM;
+            if (opponentPosition === "CO") return MPvsCO_COMM;
+            if (opponentPosition === "BTN") return MPvsBTN_COMM;
+            if (opponentPosition === "SB") return MPvsSB_COMM;
+            if (opponentPosition === "BB") return MPvsBB_COMM;
+            break;
+        case "CO":
+            if (squeezer === "IP") return COvsSQIP_COMM;
+            if (squeezer === "OOP") return COvsSQOOP_COMM;
+            if (opponentPosition === "") return CO_OR_COMM;
+            if (opponentPosition === "UTG" && plusCaller === "MP") return COvsUTGyMP_COMM;
+            if (opponentPosition === "UTG" && plusCaller === "") return COvsUTG_COMM;
+            if (opponentPosition === "MP") return COvsMP_COMM;
+            if (opponentPosition === "BTN") return COvsBTN_COMM;
+            if (opponentPosition === "SB") return COvsSB_COMM;
+            if (opponentPosition === "BB") return COvsBB_COMM;
+            break;
+        case "BTN":
+            if (squeezer === "IP") return BTNvsSQIP_COMM;
+            if (opponentPosition === "") return BTN_OR_COMM;
+            if (opponentPosition === "UTG" && plusCaller === "") return BTNvsUTG_COMM;
+            if (opponentPosition === "UTG" && plusCaller === "MP") return BTNvsUTGyMP_COMM;
+            if (opponentPosition === "UTG" && plusCaller === "CO") return BTNvsMPyCO_COMM;
+            if (opponentPosition === "MP" && plusCaller === "") return BTNvsMP_COMM;
+            if (opponentPosition === "MP" && plusCaller === "CO") return BTNvsMPyCO_COMM;
+            if (opponentPosition === "CO") return BTNvsCO_COMM;
+            if (opponentPosition === "SB") return BTNvsSB_COMM;
+            if (opponentPosition === "BB") return BTNvsBB_COMM;
+            break;
+        case "SB":
+            if (opponentPosition === "") return SB_OR_COMM;
+            if (opponentPosition === "UTG" && plusCaller === "") return SBvsUTG_COMM;
+            if (opponentPosition === "UTG" && plusCaller === "MP") return SBvsUTGyMP_COMM;
+            if (opponentPosition === "UTG" && plusCaller === "CO") return SBvsUTGyCO_COMM;
+            if (opponentPosition === "UTG" && plusCaller === "BTN") return SBvsUTGyBTN_COMM;
+            if (opponentPosition === "MP" && plusCaller === "") return SBvsMP_COMM;
+            if (opponentPosition === "MP" && plusCaller === "CO") return SBvsCO_COMM;
+            if (opponentPosition === "MP" && plusCaller === "BTN") return SBvsBTN_COMM;
+            if (opponentPosition === "CO" && plusCaller === "") return SBvsCO_COMM;
+            if (opponentPosition === "CO" && plusCaller === "BTN") return SBvsCOyBTN_COMM;
+            if (opponentPosition === "BTN") return SBvsBTN_COMM;
+            if (opponentPosition === "BB") return SBvsBB_COMM;
+            break;
+        case "BB":
+            if (opponentPosition === "UTG" && plusCaller === "") return BBvsUTG_COMM;
+            if (opponentPosition === "UTG" && plusCaller === "MP") return BBvsUTGyMP_COMM;
+            if (opponentPosition === "UTG" && plusCaller === "CO") return BBvsUTGyCO_COMM;
+            if (opponentPosition === "UTG" && plusCaller === "BTN") return BBvsUTGyBTN_COMM;
+            if (opponentPosition === "UTG" && plusCaller === "SB") return BBvsUTGySB_COMM;
+            if (opponentPosition === "MP" && plusCaller === "") return BBvsMP_COMM;
+            if (opponentPosition === "MP" && plusCaller === "CO") return BBvsMPyCO_COMM;
+            if (opponentPosition === "MP" && plusCaller === "BTN") return BBvsMPyBTN_COMM;
+            if (opponentPosition === "MP" && plusCaller === "SB") return BBvsMPySB_COMM;
+            if (opponentPosition === "CO" && plusCaller === "") return BBvsCO_COMM;
+            if (opponentPosition === "CO" && plusCaller === "BTN") return BBvsCOyBTN_COMM;
+            if (opponentPosition === "CO" && plusCaller === "SB") return BBvsCOySB_COMM;
+            if (opponentPosition === "BTN" && plusCaller === "") return BBvsBTN_COMM;
+            if (opponentPosition === "BTN" && plusCaller === "SB") return BBvsBTNySB_COMM;
+            if (opponentPosition === "SB") return BBvsSB_COMM;
+            break;
+        default:
+            return DEFAULT_COMM;
+    }
+    return "";
 }
