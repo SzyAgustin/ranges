@@ -15,6 +15,7 @@ import VsSqueezeSection from './components/VsSqueezeSection';
 import WithCallerSection from './components/WithCallerSection';
 import ColorDescription from './components/ColorDescription';
 import Matrix from './components/Matrix';
+import MatrixByImage from './components/MatrixByImage';
 
 export type colorsOptions = {
   [key: string]: string;
@@ -36,24 +37,24 @@ function App() {
   const [plusCallerPosition, setPlusCallerPosition] = useState<string>('');
   const [squeeze, setSqueeze] = useState<string>('');
 
-  const matrixColors = getMatrix(
-    myPosition,
-    opponentPosition,
-    plusCallerPosition,
-    squeeze
-  );
-  const cellsArrays =
-    matrixColors && matrixColors.split('.').map((row) => row.split('-'));
-  const comments = getComments(
-    myPosition,
-    opponentPosition,
-    plusCallerPosition,
-    squeeze
-  );
+  // const matrixColors = getMatrix(
+  //   myPosition,
+  //   opponentPosition,
+  //   plusCallerPosition,
+  //   squeeze
+  // );
+  // const cellsArrays =
+  //   matrixColors && matrixColors.split('.').map((row) => row.split('-'));
+  // const comments = getComments(
+  //   myPosition,
+  //   opponentPosition,
+  //   plusCallerPosition,
+  //   squeeze
+  // );
 
   return (
     <StyledApp>
-      <ButtonsBox>
+      {/* <ButtonsBox>
         <Flex>
           <MyPositionSection
             selectedPosition={myPosition}
@@ -85,9 +86,9 @@ function App() {
             setPlusCallerPosition={setPlusCallerPosition}
           />
         </Flex>
-      </ButtonsBox>
+      </ButtonsBox> */}
       <MatrixBox>
-        <Matrix cellsArrays={cellsArrays} matrix={matrix} colors={colors} />
+        {/* <Matrix cellsArrays={cellsArrays} matrix={matrix} colors={colors} />
         <MatrixFlex>
           <ColorDescription color={colors[1]} text='3Bet/All In' />
           <ColorDescription color={colors[2]} text='3Bet/Call 4Bet' />
@@ -103,7 +104,27 @@ function App() {
           {comments.split(' ------ ').map((line) => (
             <div>{line}</div>
           ))}
-        </CommentsBox>
+        </CommentsBox> */}
+        <div>
+          <MyPositionSection
+            selectedPosition={myPosition}
+            setMyPosition={setMyPosition}
+            setOpponentPosition={setOpponentPosition}
+            setSqueeze={setSqueeze}
+            setPlusCaller={setPlusCallerPosition}
+          />
+          <MatrixByImage yourPosition={myPosition} opponentPosition={opponentPosition} />
+        </div>
+        <div>
+          <OponentSection
+            opponentPosition={opponentPosition}
+            setOpponentPosition={setOpponentPosition}
+            setPlusCaller={setPlusCallerPosition}
+            myPosition={myPosition}
+            setSqueeze={setSqueeze}
+          />
+          <MatrixByImage yourPosition={opponentPosition} opponentPosition={myPosition} />
+        </div>
       </MatrixBox>
     </StyledApp>
   );

@@ -2,17 +2,22 @@ import styled from 'styled-components';
 
 export const StyledApp = styled.div`
   margin: 25px auto;
-  display: flex;
+  /* display: flex; */
 `;
 
 export const MatrixBox = styled.div`
-  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
   margin-top: 10px;
 `;
 
 export const ButtonsBox = styled.div`
   padding-left: 50px;
-  width: 60%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 `;
 
 export const MatrixFlex = styled.div`
@@ -61,11 +66,13 @@ export const Button = styled.button<ButtonProps>`
 export const Title = styled.h1`
   font-size: 20px;
   margin: 5px 0;
+  color: white;
 `;
 
 export const Section = styled.div`
   margin-right: 40px;
   width: 350px;
+  margin-bottom: 20px;
 `;
 
 export const Row = styled.div`

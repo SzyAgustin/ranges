@@ -24,7 +24,7 @@ const MyPositionSection = ({
 
   return (
     <Section>
-      <Title>YOUR POSITION</Title>
+      <Title>MY RANGE</Title>
       <Button
         selected={selectedPosition === 'BB'}
         onClick={() => selectMyPosition('BB')}
