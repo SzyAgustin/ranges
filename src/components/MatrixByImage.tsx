@@ -1,9 +1,9 @@
 import React from 'react'
-import BBvsBTN from '../images/BBvsBTN.PNG'
-import BBvsMP from '../images/BB vs MP.PNG'
-import BBvsCO from '../images/BB vs CO.PNG'
-import BBvsUTG from '../images/BB vs UTG.PNG'
-import BBvsSB from '../images/BB vs SB.PNG'
+import BBvsBTN from '../images/BB vs BTN2.PNG'
+import BBvsMP from '../images/BB vs MP2.PNG'
+import BBvsCO from '../images/BB vs CO2.PNG'
+import BBvsUTG from '../images/BB vs UTG2.PNG'
+import BBvsSB from '../images/BB vs SB2.PNG'
 import BTNvsCO from '../images/BTN 3BET vs CO.PNG'
 import BTNvsUTG from '../images/BTN 3BET vs UTG.PNG'
 import BTNvsMP from '../images/BTN 3BET vs MP.PNG'
@@ -35,6 +35,7 @@ import UTGvsSB from '../images/UTG vs 3BET IP.PNG'
 import UTGvsBB from '../images/UTG vs 3BET IP.PNG'
 import UTGOR from '../images/UTG OR.PNG'
 import Black from '../images/black.png'
+import { ImgMatrix } from './Styled'
 
 interface MatrixByImageProps {
     yourPosition: string,
@@ -83,7 +84,7 @@ const MatrixByImage = ({yourPosition, opponentPosition}: MatrixByImageProps) => 
 
   return (
     <div>
-        <img src={getImg()} alt="matrix" />
+        <ImgMatrix src={getImg()} alt="matrix" />
     </div>
   )
 }

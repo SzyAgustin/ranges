@@ -78,3 +78,8 @@ export const Section = styled.div`
 export const Row = styled.div`
   display: flex;
 `;
+
+export const ImgMatrix = styled.img`
+  width: 480px;
+  height: 480px;
+`
